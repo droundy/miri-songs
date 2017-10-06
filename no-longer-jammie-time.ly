@@ -96,10 +96,10 @@ secondVerse = \lyricmode {
   \skip2 \skip2 \skip2 \skip2 \skip2 \skip2 \skip2 \skip2 \skip2 \skip2
   \skip2 \skip2 \skip2 \skip2 \skip2 \skip2 \skip2 \skip2 \skip2 \skip2
   \skip2 \skip2
-  I'll take off your sleep sack,
-  I'll take off your foot -- ies.
-  I'll take off your one -- sie,
-  I'll take off your dai -- per...
+  I'll put on your dai -- per
+  I'll put on your one -- sie.
+  I'll put on your pants _
+  I'll put on your socks... _
   'cause
 }
 
