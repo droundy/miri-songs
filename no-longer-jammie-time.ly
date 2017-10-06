@@ -14,7 +14,7 @@
 global = {
   \key g \major
   \time 4/4
-  \partial 2.
+  \partial 2
 }
 
 sopranoVoice = \relative c'' {
@@ -41,18 +41,17 @@ tenorVoice = \relative c {
   \dynamicUp
   % Music follows here.
   \repeat volta 2 {
-  d4. d |
-  \time 7/8
+  d4 d | \time 7/8 
   g8 g g b b g4 e8 e e a fis d4 g8 g g b b g4
-  \time 4/4 e8 a4 g4 g8 fis4 g4
-  d4. d |
+  \time 4/4 e8 a4 g4 g8 fis4 g2
+  d4 d |
   \time 7/8 g8 g g b b g4 e8 e e a fis d4 g8 g g b b g4
   \time 4/4 e4 a8 g4 g8 fis4
   g2 r4
   d4
   g4. b g4 e4 a2 g4 fis4. a fis4 fis g2
-  d4 g4. b g4 e4 a2 g4 fis4. a fis4 fis g2 r4
-  d4
+  d4 g4. b g4 e4 a2 g4 fis4. a fis4 fis g
+  \grace { d8 }
   }
 }
 
@@ -118,12 +117,16 @@ tenorVoicePart = \new Staff \with {
 
 \score {
   <<
-    \sopranoVoicePart
+    % \sopranoVoicePart
     \tenorVoicePart
     \new Lyrics \lyricsto "tenor" \verseTenorVoice
     \new Lyrics \lyricsto "tenor" \secondVerse
   >>
-  \layout { }
+  \layout {
+    \context {
+      \Lyrics { \set includeGraceNotes = ##t }
+    }
+  }
   \midi {
     \context {
       \Score
