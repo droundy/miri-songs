@@ -89,6 +89,20 @@ verseTenorVoice = \lyricmode {
   'cause
 }
 
+secondVerse = \lyricmode {
+  \skip2 \skip2 \skip2 \skip2 \skip2 \skip2 \skip2 \skip2 \skip2 \skip2
+  \skip2 \skip2 \skip2 \skip2 \skip2 \skip2 \skip2 \skip2 \skip2 \skip2
+  \skip2 \skip2 \skip2 \skip2 \skip2 \skip2 \skip2 \skip2 \skip2 \skip2
+  \skip2 \skip2 \skip2 \skip2 \skip2 \skip2 \skip2 \skip2 \skip2 \skip2
+  \skip2 \skip2 \skip2 \skip2 \skip2 \skip2 \skip2 \skip2 \skip2 \skip2
+  \skip2 \skip2
+  I'll take off your sleep sack,
+  I'll take off your foot -- ies.
+  I'll take off your one -- sie,
+  I'll take off your dai -- per...
+  'cause
+}
+
 sopranoVoicePart = \new Staff \with {
   instrumentName = "Soprano"
   midiInstrument = "violin"
@@ -100,13 +114,14 @@ tenorVoicePart = \new Staff \with {
   instrumentName = "Tenor"
   midiInstrument = "violin"
   \consists "Ambitus_engraver"
-} { \clef "treble_8" \tenorVoice }
-\addlyrics { \verseTenorVoice }
+} { \clef "treble_8" \new Voice = "tenor" \tenorVoice }
 
 \score {
   <<
     \sopranoVoicePart
     \tenorVoicePart
+    \new Lyrics \lyricsto "tenor" \verseTenorVoice
+    \new Lyrics \lyricsto "tenor" \secondVerse
   >>
   \layout { }
   \midi {
